@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
+    "dev:mock": "cross-env PET_MOCK= mock npm run dev",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "format": "prettier \"src/**/* .{js, html}\" --write",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,5 +28,6 @@
     "@frontendmasters/pet": "^1.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
-  }
+  },
+  "browserslist": ["last 2 Chrome versions"]
 }
