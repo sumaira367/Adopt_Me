@@ -1,7 +1,9 @@
 import React from "react";
 import {render} from "react-dom";
+import  {Router, Link} from "@reach/router";
 import  Pet  from "./Pet";
 import SearchParams from "./SearchParams";
+import Details from "./Details";
 
 const App = () => {
 //   return React.createElement("div", { id: "something-important" }, [
@@ -20,13 +22,20 @@ const App = () => {
 //   ]);
 
     return(
-        <div>
-            <h1 id="something-important"> Adopt Me!</h1>
-            {/* <Pet name= "Luna" animal= "Dog" breed="Havanese"/>
-            <Pet name= "Pepper" animal= "Bird" breed="Cocktiel"/>
-            <Pet name= "Doink" animal= "Cat" breed="Mixed"/> */}
-            <SearchParams/>
-        </div>
+        <React.StrictMode>
+            <div>
+                <header>
+                <Link to="/">Adopt Me!</Link>
+                </header>
+                <Router>
+                    <SearchParams path="/"/>
+                    <Details path="/details/:id"/>
+
+                </Router>
+            
+            </div>
+        </React.StrictMode>
+        
     )
 };
 
